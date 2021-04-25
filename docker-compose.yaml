@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    server:
+        build:
+            dockerfile: Dockerfile
+            context: .
+        ports:
+            - 8080:80
+    mysql:
+        image: mysql:latest
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: <tbd>
+            MYSQL_DATABASE: chamilo
+            MYSQL_USER: chamilo_user
+            MYSQL_PASSWORD: <tbd>
